@@ -50,7 +50,9 @@
 
 ;;(package! org-roam:-ui
 ;;  :recipe (:host github :repo "org-roam/org-roam-ui"))
-(package! evil-tutor)
+;; (package! evil-tutor)
 (package! vterm)
 (package! lsp-pyright)
 (package! use-package-chords)
+(package! org-roam-ui
+  :recipe (:host github :repo "org-roam/org-roam-ui"))
