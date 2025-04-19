@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "hwpham"
-      user-mail-address "hwillpham@gmail.com")
+      user-mail-address "phamhieu592001@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -23,6 +23,8 @@
 ;;
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+;;
+(setq doom-font (font-spec :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -48,6 +50,11 @@
 
 (setq org-roam-file-extensions '("org"))
 
+;; (use-package! pangu-spacing
+;;   :ensure t
+;;   :config
+;;   (global-pangu-spacing-mode 1))
+
 (setq org-roam-node-display-template
       (concat "${type:15} ${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
 
@@ -57,10 +64,23 @@
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)
+
+        ("r" "reference" plain "%?"
+         :if-new (file+head "reference/${title}.org"
+                            "#+title: ${title}\n")
+         :immediate-finish t
+         :unnarrowed t)
+
         ("d" "default" plain "%?"
          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n")
          :unnarrowed t)
+
+        ("m" "Minna no Nihongo" plain "%?"
+         :if-new (file+head "reference/tlcl/${slug}.org"
+                            "#+title: ${title}\n#+date: %U\n")
+         :unnarrowed t)
+
         ("l" "The Linux Command Line" plain "%?"
          :if-new (file+head "reference/tlcl/${slug}.org"
                             "#+title: ${title}\n#+date: %U\n")

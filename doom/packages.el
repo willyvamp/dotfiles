@@ -54,5 +54,6 @@
 (package! vterm)
 (package! lsp-pyright)
 (package! use-package-chords)
+(package! pangu-spacing)
 (package! org-roam-ui
   :recipe (:host github :repo "org-roam/org-roam-ui"))
