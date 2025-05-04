@@ -25,6 +25,7 @@
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 (setq doom-font (font-spec :size 13))
+(setq doom-unicode-font (font-spec :family "Fira Mono":size 12))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -76,8 +77,13 @@
                             "#+title: ${title}\n")
          :unnarrowed t)
 
-        ("m" "Minna no Nihongo" plain "%?"
-         :if-new (file+head "reference/tlcl/${slug}.org"
+        ("j" "Minna no Nihongo" plain "%?"
+         :if-new (file+head "reference/minna/${slug}.org"
+                            "#+title: ${title}\n#+date: %U\n")
+         :unnarrowed t)
+
+        ("b" "Practice Makes Perfect - Basic Japanese" plain "%?"
+         :if-new (file+head "reference/ErikoSato/${slug}.org"
                             "#+title: ${title}\n#+date: %U\n")
          :unnarrowed t)
 
@@ -85,6 +91,9 @@
          :if-new (file+head "reference/tlcl/${slug}.org"
                             "#+title: ${title}\n#+date: %U\n")
          :unnarrowed t)))
+
+;;(use-package 'ui/unicode)
+;;(set-input-method "vietnamese-telex")
 
 (use-package org-roam
   :ensure t
