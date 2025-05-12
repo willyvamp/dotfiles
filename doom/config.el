@@ -1,3 +1,5 @@
+;;; WARNING: EMACS IS SET TO HOLD by /apt-mark hold/ to disable automatically update
+;;;
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
