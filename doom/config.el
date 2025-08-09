@@ -89,8 +89,8 @@
                             "#+title: ${title}\n#+date: %U\n")
          :unnarrowed t)
 
-        ("l" "The Linux Command Line" plain "%?"
-         :if-new (file+head "reference/tlcl/${slug}.org"
+        ("l" "Linux by Jannis Seemann" plain "%?"
+         :if-new (file+head "reference/Linux_by_Jannis_Seeman/${slug}.org"
                             "#+title: ${title}\n#+date: %U\n")
          :unnarrowed t)))
 
