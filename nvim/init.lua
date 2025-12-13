@@ -26,18 +26,13 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.expandtab = true
-vim.opt.shiftwidth = r
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 
--- nvim-tree key bindings
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
-vim.keymap.set('n', '<C-h>', '<C-w>h', { silent = true })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { silent = true })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { silent = true })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { silent = true })
+-- VI mode keybindings
+vim.keymap.set("i", "jj", "<ESC>", { silent = true, desc = "exit insert mode" })
 
 -- general key bindings
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move current line down" })
@@ -45,6 +40,17 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move c
 vim.keymap.set("n", "<A-j>", "V:m '>+1<CR>gv=gv<Esc>", { silent = true, desc = "Move current line down" })
 vim.keymap.set("n", "<A-k>", "V:m '<-2<CR>gv=gv<Esc>", { silent = true, desc = "Move current line up" })
 
--- VI mode keybindings
-vim.keymap.set("i", "jj", "<ESC>", { silent = true, desc = "exit insert mode" })
+-- nvim-tree key bindings
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
+-- vim.keymap.set('n', '<C-h>', '<C-w>h', { silent = true })
+-- vim.keymap.set('n', '<C-j>', '<C-w>j', { silent = true })
+-- vim.keymap.set('n', '<C-k>', '<C-w>k', { silent = true })
+-- vim.keymap.set('n', '<C-l>', '<C-w>l', { silent = true })
+ 
+-- -- telescope key bindings
+-- local builtin = require('telescope.builtin')
+-- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+-- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+-- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+-- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
