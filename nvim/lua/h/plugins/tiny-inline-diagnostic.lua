@@ -34,7 +34,7 @@ return {
 
         show_code = true,
         use_icons_from_diagnostic = false,
-        set_arrow_to_diag_color = false,
+        set_arrow_to_diag_color = true,
 
         throttle = 20,
         softwrap = 30,
@@ -46,6 +46,7 @@ return {
           show_multiple_glyphs = true,
         },
 
+        -- Settings for multiline diagnostics
         multilines = {
           enabled = false,
         },
