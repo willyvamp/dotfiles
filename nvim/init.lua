@@ -46,11 +46,16 @@ vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
 -- vim.keymap.set('n', '<C-j>', '<C-w>j', { silent = true })
 -- vim.keymap.set('n', '<C-k>', '<C-w>k', { silent = true })
 -- vim.keymap.set('n', '<C-l>', '<C-w>l', { silent = true })
- 
+
 -- telescope key bindings
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- tiny-inline-diagnostics key bindings
+vim.keymap.set("n", "<leader>de", "<cmd>TinyInlineDiag enable<cr>", { desc = "Enable diagnostics" })
+vim.keymap.set("n", "<leader>dd", "<cmd>TinyInlineDiag disable<cr>", { desc = "Disable diagnostics" })
+vim.keymap.set("n", "<leader>dt", "<cmd>TinyInlineDiag toggle<cr>", { desc = "Toggle diagnostics" })
 
