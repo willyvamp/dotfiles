@@ -1,0 +1,101 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](#6E8B5E)\
+[  ](bg:#6E8B5E fg:#E6F0E1)\
+[ ](bg:#6E8B5E fg:#1E241C)\
+[](bg:#7A9A66 fg:#6E8B5E)\
+$directory\
+[](fg:#7A9A66 bg:#5F7F4E)\
+$git_branch\
+$git_status\
+[](fg:#5F7F4E bg:#3A4A34)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:#3A4A34 bg:#2B3527)\
+[ ](fg:#2B3527)\
+\n$character"""
+
+[os]
+disabled = false
+style = "fg:#E6F0E1 bg:#5F7F4E"
+
+[directory]
+style = "fg:#E6F0E1 bg:#7A9A66"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+
+[git_branch]
+symbol = ""
+style = "bg:#5F7F4E"
+format = '[[ $symbol $branch ](fg:#E6F0E1 bg:#5F7F4E)]($style)'
+
+[git_status]
+style = "bg:#5F7F4E"
+format = '[[($all_status$ahead_behind )](fg:#E6F0E1 bg:#5F7F4E)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[c]
+symbol = " "
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[java]
+symbol = ""
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#3A4A34"
+format = '[[ $symbol ($version) ](fg:#9FB593 bg:#3A4A34)]($style)'
+
+[line_break]
+disabled = false
+
