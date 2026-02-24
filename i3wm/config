@@ -28,7 +28,11 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id xset -dpms
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset s noblank
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -250,15 +254,16 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+z exec rofi -show run -lines 20 -eh 1.3 -opacity "85" -bw 0 -font "System San Francisco Display 10"
+bindsym $mod+z exec rofi -show run -lines 20 -eh 1.3 -opacity "85" -bw 0 -font "FiraCode 10"
 
 # exec_always feh --bg-fill /home/hwpham/Pictures/wallpaper.jpg
 exec_always --no-startup-id sleep 2 && ~/.fehbg
 
 exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
 
+# exec_always --no-startup-id fcitx5
 
-# exec_always --no-startup-id picom --config /home/hwpham/.config/i3/picom.conf
+exec_always --no-startup-id picom --config /home/hwpham/.config/picom/picom.conf
 exec_always --no-startup-id twmnd 
 
 # application rules
@@ -266,18 +271,21 @@ exec_always --no-startup-id twmnd
                 assign [class="Firefox"] → 1
 
 # audio sinks swicthing
-bindsym $mod+Shift+greater exec --no-startup-id pactl set-default-sink alsa_output.usb-Apple__Inc._EarPods_J14K3G4104-00.analog-stereo
+# bindsym $mod+Shift+greater exec --no-startup-id pactl set-default-sink alsa_output.usb-Apple__Inc._EarPods_J14K3G4104-00.analog-stereo
+bindsym $mod+Shift+greater exec --no-startup-id pactl set-default-sink alsa_output.usb-MOONDROP_ECHO-B-00.analog-stereo
 bindsym $mod+Shift+less exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo 
 
 # battery notification
 exec --no-startup-id /home/hwpham/.config/i3/i3-battery-popup -L 20 for_window [title="Battery Warning"] sticky enable
+# exec --no-startup-id xautolock -detectsleep -corners -000 -time 10 -locker 'i3lock -c 000000' &
 
-# autolock
-# exec --no-startup-id xautolock -corners -000 -time 10 -locker 'i3lock -c 000000' &
 bindsym $mod+Shift+grave exec i3lock -c 000000 && systemctl suspend
 bindsym $mod+grave exec i3lock -c 000000 
 
 # PCManFM
 bindsym $mod+Shift+f exec --no-startup-id pcmanfm
+
+# Calendar
+bindsym $mod+c exec --no-startup-id gsimplecal
 
 # exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
