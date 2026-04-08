@@ -27,7 +27,7 @@
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 (setq doom-font (font-spec :size 13))
-(setq doom-unicode-font (font-spec :family "Fira Mono":size 12))
+(setq doom-unicode-font (font-spec :family "Adwaita Mono":size 12))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -48,8 +48,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/h/note/org/")
-(setq org-roam-directory (file-truename "~/h/note/roam/"))
+(setq org-directory "~/notes/org/")
+(setq org-roam-directory (file-truename "~/notes/roam/"))
 
 (setq org-roam-file-extensions '("org"))
 
@@ -108,7 +108,7 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory (file-truename "~/h/note/roam/"))
+  (org-roam-directory (file-truename "~/notes/roam/"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
@@ -135,12 +135,12 @@
   :ensure t
   :commands vterm)
 
-(use-package lsp-pyright
-  :ensure t
-  :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
+;; (use-package lsp-pyright
+;;   :ensure t
+;;   :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
+;;   :hook (python-mode . (lambda ()
+;;                           (require 'lsp-pyright)
+;;                           (lsp))))  ; or lsp-deferred
 
 ;;Exit insert mode by pressing j and then j quickly
 ;; (setq key-chord-two-keys-delay 0.5)
