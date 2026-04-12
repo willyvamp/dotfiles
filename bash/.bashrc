@@ -84,3 +84,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Initialize Starship cross-shell promt
 eval "$(starship init bash)"
+
+# ibus-bamboo
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
