@@ -27,7 +27,7 @@
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 (setq doom-font (font-spec :size 13))
-(setq doom-unicode-font (font-spec :family "Adwaita Mono":size 12))
+(setq doom-symbol-font (font-spec :family "Adwaita Mono":size 12))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -84,6 +84,11 @@
          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n")
          :unnarrowed t)
+
+        ("x" "Linux Device Driver 3rd" plain "%?"
+         :if-new (file+head "reference/LLD3/${slug}.org"
+                            "#+title: ${title}\n#+date: %U\n")
+         :unnarrowed t)
           
         ("g" "Pro Git" plain "%?"
          :if-new (file+head "reference/ProGit/${slug}.org"
@@ -134,6 +139,13 @@
 (use-package vterm
   :ensure t
   :commands vterm)
+
+;; (setq yank-media-insert-function
+;;  (lambda (file)
+;;    (insert (format "[[attachment:%s]]" (file-name-nondirectory file)))))
+
+(with-eval-after-load 'org
+  (setq org-yank-image-save-method 'attach))
 
 ;; (use-package lsp-pyright
 ;;   :ensure t
