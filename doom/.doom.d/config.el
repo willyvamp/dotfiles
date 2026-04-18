@@ -105,14 +105,14 @@
       '(("d" "Daily notes" plain "%?"
          :if-new (file+head "%<%Y-%m-%d>.org"
 "#+title: %<%Y-%m-%d>
-* daily
+* TODO daily routine [/]
 - [ ] weigh
 - [ ] morning deep work
 - [ ] read
 - [ ] exercises
 - [ ] anki
 
-* tasks
+* TODO tasks [/]
 ** TODO ")
 :unnarrowed t)))
 
@@ -127,18 +127,18 @@
   (org-roam-directory (file-truename "~/notes/roam/"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
-         ("C-c n g" . org-roam-graph-executable)
+         ("C-c n g" . org-roam-ui-mode)
          ("C-c n i" . org-roam-node-insert)
-         ("C-c n c" . org-roam-capture))
+         ("C-c n c" . org-roam-capture)
          ;; Dailies
-         ;; ("C-c n j" . org-roam-dailies-capture-today))
+         ("C-c n j" . org-roam-dailies-capture-today))
   :config
   ;; If you're using a vertical completion framework, you might want a more informative completion interface
   ;; (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
   (org-roam-db-autosync-mode))
 
 (use-package! org-roam-ui
-  :after org-roam
+  :after org-rojm
   :hook (org-roam-mode . org-roam-ui-mode)
   :config
   (setq org-roam-ui-sync-theme t
