@@ -106,13 +106,24 @@
          :if-new (file+head "%<%Y-%m-%d>.org"
 "#+title: %<%Y-%m-%d>
 * TODO daily routine [/]
-- [ ] weigh
-- [ ] morning deep work
-- [ ] read
-- [ ] exercises
-- [ ] anki
 
-* TODO tasks [/]
+** [ ] weigh
+
+** [ ] morning deep work [/]
+*** TODO 
+
+** [ ] read [/]
+*** TODO read
+
+** [ ] exercises
+*** TODO ride
+*** TODO run
+
+** [ ] anki [/]
+*** TODO sync offline note from KOreader
+*** TODO review anki cards
+
+* TODO other tasks [/]
 ** TODO ")
 :unnarrowed t)))
 
@@ -138,7 +149,7 @@
   (org-roam-db-autosync-mode))
 
 (use-package! org-roam-ui
-  :after org-rojm
+  :after org-roam
   :hook (org-roam-mode . org-roam-ui-mode)
   :config
   (setq org-roam-ui-sync-theme t
