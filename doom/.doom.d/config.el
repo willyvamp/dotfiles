@@ -159,7 +159,7 @@
         org-roam-ui-open-on-start t))
 
 
-(use-package vter
+(use-package vterm
   :ensure t
   :commands vterm)
 
