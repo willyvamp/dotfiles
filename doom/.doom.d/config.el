@@ -99,6 +99,7 @@
                             "#+title: ${title}\n#+date: %U\n")
          :unnarrowed t)))
 
+;; Daily TODO templates
 (setq org-roam-dailies-directory "daily/")
 
 (setq org-roam-dailies-capture-templates
