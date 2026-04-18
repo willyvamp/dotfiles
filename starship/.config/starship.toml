@@ -2,7 +2,7 @@
 
 format = """
 [░▒▓](#6E8B5E)\
-[  ](bg:#6E8B5E fg:#E6F0E1)\
+[  ](bg:#6E8B5E fg:#E6F0E1)\
 [ ](bg:#6E8B5E fg:#1E241C)\
 [](bg:#7A9A66 fg:#6E8B5E)\
 $directory\
