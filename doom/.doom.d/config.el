@@ -68,12 +68,6 @@
          :immediate-finish t
          :unnarrowed t)
 
-        ("d" "Daily notes" plain "%?"
-         :if-new (file+head "daily/${slug}.org"
-                            "#+title: ${title}\n")
-         :immediate-finish t
-         :unnarrowed t)
-
         ("r" "reference" plain "%?"
          :if-new (file+head "reference/${title}.org"
                             "#+title: ${title}\n")
@@ -105,6 +99,23 @@
                             "#+title: ${title}\n#+date: %U\n")
          :unnarrowed t)))
 
+(setq org-roam-dailies-directory "daily/")
+
+(setq org-roam-dailies-capture-templates
+      '(("d" "Daily notes" plain "%?"
+         :if-new (file+head "%<%Y-%m-%d>.org"
+"#+title: %<%Y-%m-%d>
+* daily
+- [ ] weigh
+- [ ] morning deep work
+- [ ] read
+- [ ] exercises
+- [ ] anki
+
+* tasks
+** TODO ")
+:unnarrowed t)))
+
 ;;(use-package 'ui/unicode)
 ;;(set-input-method "vietnamese-telex")
 
@@ -116,7 +127,7 @@
   (org-roam-directory (file-truename "~/notes/roam/"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
-         ("C-c n g" . org-roam-graph)
+         ("C-c n g" . org-roam-graph-executable)
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture))
          ;; Dailies
@@ -136,7 +147,7 @@
         org-roam-ui-open-on-start t))
 
 
-(use-package vterm
+(use-package vter
   :ensure t
   :commands vterm)
 
