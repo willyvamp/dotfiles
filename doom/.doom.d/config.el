@@ -105,7 +105,7 @@
 (setq org-roam-dailies-capture-templates
       '(("d" "Daily notes" plain "%?"
          :if-new (file+head "%<%Y-%m-%d>.org"
-"#+title: %<%Y-%m-%d>
+"#+title: %<%a, %Y-%m-%d>
 * TODO daily routine [/]
 
 ** [ ] weigh
