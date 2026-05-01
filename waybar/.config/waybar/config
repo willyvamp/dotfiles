@@ -1,0 +1,81 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["cpu", "memory", "pulseaudio", "network", "battery", "tray"],
+
+  // ── Clock ──────────────────────────────────────────────────────────────────
+  "clock": {
+    "format": "{:%a %b %d %H:%M}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "locale": "en_GB",
+      "format": {
+        "months":   "<span color='#cba6f7'><b>{}</b></span>",
+        "days":     "<span color='#cdd6f4'>{}</span>",
+        "weekdays": "<span color='#89b4fa'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    }
+  },
+
+  // ── CPU ────────────────────────────────────────────────────────────────────
+  "cpu": {
+    "format": "󰘚  {usage}%",
+    "interval": 2,
+    "on-click": "kitty --hold btop"
+  },
+
+  // ── Memory ────────────────────────────────────────────────────────────────
+  "memory": {
+    "format": " 󰍛  {used:0.1f}G",
+    "interval": 5,
+    "on-click": "kitty --hold btop"
+  },
+
+  // ── Audio ──────────────────────────────────────────────────────────────────
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟  Muted",
+    "format-icons": {
+      "default": ["󰕿 ", "󰖀 ", "󰕾 "]
+    },
+    "on-click": "pavucontrol",
+    "scroll-step": 5
+  },
+
+  // ── Network ────────────────────────────────────────────────────────────────
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": "󰈀 {ipaddr}",
+    "format-disconnected": "󰤭",
+    "tooltip-format": "{ifname}: {essid} ({signalStrength}%)\n{ipaddr}\n{gwaddr}",
+    "on-click": "nmtui"
+  },
+
+  // ── Battery ────────────────────────────────────────────────────────────────
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["  ", "  ", "  ", "  ", "  "],
+    "on-click": "mode"
+  },
+
+  // ── Tray ───────────────────────────────────────────────────────────────────
+  "tray": {
+    "spacing": 8
+  }
+}

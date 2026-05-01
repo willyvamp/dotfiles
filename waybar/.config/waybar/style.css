@@ -1,0 +1,48 @@
+@define-color bg    #1a1b26;
+@define-color fg    #a9b1d6; 
+
+* {
+  font-family: "Adwaita Sans", "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+}
+
+window#waybar {
+  background: #000000;
+  color: #ffffff;
+  /* background: @bg; */
+  /* color: @fg; */
+  border-bottom: none;
+}
+
+/* Workspaces */
+#workspaces {
+  margin-left: 8px;
+}
+
+#workspaces button {
+  color: #888;
+  background: transparent;
+  padding: 0 6px;
+  margin: 0 2px;
+  border-radius: 10px;
+}
+
+#workspaces button.active {
+  background: #2a2a2a;
+  color: #ffffff;
+  padding: 2px 10px;
+}
+
+/* Center clock */
+#clock {
+  font-weight: 500;
+}
+
+/* Right modules */
+#pulseaudio,
+#network,
+#battery {
+  padding: 0 8px;
+}
