@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+# set -o vi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -70,6 +72,9 @@ function extract {
         esac
     done
 }
+
+export EDITOR=nvim
+export VISUAL=nvim
 
 # add ~/.emacs.d/bin to PATH to call 'doom' directly and from anywhere
 PATH="${PATH}:${HOME}/.emacs.d/bin"
