@@ -79,6 +79,11 @@
                             "#+title: ${title}\n")
          :unnarrowed t)
 
+        ("o" "Operating Systems: Three Easy Pieces" plain "%?"
+         :if-new (file+head "reference/OSTEP/${slug}.org"
+                            "#+title: ${title}\n#+date: %U\n")
+         :unnarrowed t)
+
         ("x" "Linux Device Driver 3rd" plain "%?"
          :if-new (file+head "reference/LLD3/${slug}.org"
                             "#+title: ${title}\n#+date: %U\n")
