@@ -84,6 +84,11 @@
                             "#+title: ${title}\n#+date: %U\n")
          :unnarrowed t)
 
+        ("e" "Electronic learning" plain "%?"
+         :if-new (file+head "reference/electronic/${slug}.org"
+                            "#+title: ${title}\n#+date: %U\n")
+         :unnarrowed t)
+
         ("x" "Linux Device Driver 3rd" plain "%?"
          :if-new (file+head "reference/LLD3/${slug}.org"
                             "#+title: ${title}\n#+date: %U\n")
