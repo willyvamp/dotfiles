@@ -2,7 +2,8 @@
     "custom/arch": {
         "format": "󰣇",
         "tooltip": true,
-        "tooltip-format": "btw"
+        "tooltip-format": "Power Menu",
+        "on-click": "sh ~/.config/hypr/scripts/power-menu.sh"
     },
 
 
